@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ProductInventoryTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-02-21T02:01:58" hostname="Raphaels-MacBook-Pro.local" time="0.157">
+  <properties/>
+  <testcase name="isProductReady_productUtilityFindsNothing_returnsEmptyOptional()" classname="ProductInventoryTest" time="0.148"/>
+  <testcase name="isProductReady_wrongItemNumber_throwsIllegalArgumentException()" classname="ProductInventoryTest" time="0.001"/>
+  <testcase name="findProductNames_productUtilityFindsNames_returnsPopulatedMap()" classname="ProductInventoryTest" time="0.002"/>
+  <testcase name="findProductNames_nullProductUtility_throwsIllegalArgumentException()" classname="ProductInventoryTest" time="0.001"/>
+  <testcase name="isProductReady_productIsReady_returnsPopulatedOptional()" classname="ProductInventoryTest" time="0.001"/>
+  <testcase name="findProductNames_nullProductIDs_throwsIllegalArgumentException()" classname="ProductInventoryTest" time="0.001"/>
+  <testcase name="findProductNames_productUtilityFindsNothing_returnsEmptyMap()" classname="ProductInventoryTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

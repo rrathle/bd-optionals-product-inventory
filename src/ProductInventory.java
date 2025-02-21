@@ -35,11 +35,33 @@ public class ProductInventory {
      */
     Map<Integer, String> findProductNames() {
         // TODO: replace stub implementation
-        Map<Integer, String> stubMap = new HashMap<Integer, String>();
-        for (Integer productID : productIDs) {
-            stubMap.put(productID, "");
+        if(productUtility == null) {
+            throw new IllegalArgumentException("productUtility is null");
         }
-        return stubMap;
+        if(productIDs == null ) {
+            throw new IllegalArgumentException("productID is null");
+        }
+
+        Map<Integer, String> productMap = new HashMap<>();
+
+        for(Integer productID: productIDs) {
+           try {
+               String productName = productUtility.findProductName(productID);
+               if (productName != null) {
+                   productMap.put(productID, productName);
+               }
+           } catch (NullPointerException e) {
+               throw new IllegalArgumentException("productID is null");
+           }
+        }
+
+//
+//        Map<Integer, String> stubMap = new HashMap<Integer, String>();
+//        for (Integer productID : productIDs) {
+//            stubMap.put(productID, "");
+//        }
+//        return stubMap;
+        return productMap;
     }
 
     /**
@@ -49,7 +71,13 @@ public class ProductInventory {
      */
     Optional<Boolean> isProductReady(Integer productID) {
         // TODO: replace stub implementation
-        Boolean stubResult = productUtility.isProductReady(0);
-        return Optional.of(stubResult);
+        try {
+            Boolean prReady = productUtility.isProductReady(productID);
+            return Optional.ofNullable(prReady);
+        } catch (NullPointerException e) {
+            throw new IllegalArgumentException("The productID was null");
+        }
+//        Boolean stubResult = productUtility.isProductReady(0);
+//        return Optional.of(stubResult);
     }
 }
